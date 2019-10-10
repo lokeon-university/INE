@@ -32,8 +32,6 @@
 
 
     img.camiseta {
-      height: auto;
-      width: auto;
       box-shadow: 4px 4px 5px grey;
     }
 
