@@ -10,36 +10,17 @@
 
   <style>
 
-    nav.navbar {
-      background-color: whitesmoke;
+    /* LINK STYLE */
+
+    a {
+      color: darkgreen;
     }
 
-    input.text {
-      background-color: whitesmoke;
+    a:hover {
+      color: limegreen;
     }
 
-    .icon {
-      height: 32px;
-      width: 32px;
-      margin-top: -10px;
-      background-image: url(ico/carro32.png);
-      background-repeat: no-repeat;
-    }
-
-    .icon:hover {
-      background-image: url(ico/carrol32.png);
-    }
-
-
-    img.camiseta {
-      box-shadow: 4px 4px 5px grey;
-    }
-
-    img.camven {
-      height: auto;
-      width: 80%;
-      box-shadow: 4px 4px 5px grey;
-    }
+    /* BUTTON STYLE */
 
     .btn-primary {
       background-color: darkgreen;
@@ -51,38 +32,74 @@
       border-color: limegreen;
     }
 
-    a {
-      color: darkgreen;
+    /* FOOTER STYLE */
+
+    footer {
+      background-color: whitesmoke;
+      bottom: 0px;
+      height: auto;
+      width:100%;
+      padding-left: 0px;
+      padding-right: 0px;      
     }
 
-    a:hover {
-      color: limegreen;
+    /* ICON STYLE */
+
+    .icon {
+      background-image: url(ico/carro32.png);
+      background-repeat: no-repeat;
+      height: 32px;
+      width: 32px;
+      margin-top: -10px;
     }
+
+    .icon:hover {
+      background-image: url(ico/carrol32.png);
+      background-repeat: no-repeat;
+      height: 32px;
+      width: 32px;
+      margin-top: -10px;
+    }
+
+    /* IMAGE STYLE */
+
+    img.camiseta {
+      box-shadow: 4px 4px 5px grey;
+    }
+
+    img.camven {
+      box-shadow: 4px 4px 5px grey;
+      height: auto;
+      width: 80%;
+    }
+
+    /* INPUT STYLE */
+
+    input.form-inline {
+      margin-right: 5px;
+    }
+
+    /* NAV-ITEM STYLE */
 
     li.nav-item {
       margin-left: 10px;
       margin-right: 10px;
     }
 
-    input.form-inline {
-      margin-right: 5px;
+    /* NAVBAR STYLE */
+
+    nav.navbar {
+      background-color: whitesmoke;
     }
 
-    footer {
-      background-color: whitesmoke;
-      bottom: 0px;
-      padding-left: 0px;
-      padding-right: 0px;
-      width:100%;
-      height: auto;
-    }
+    /* VENTAS STYLE */
 
     .ventas {
-      box-shadow: 4px 4px 5px grey;
-      height: 100%;
       background-color: whitesmoke;
       border-color: black;
-      
+      box-shadow: 4px 4px 5px grey;
+      height: 100%;
+      width: auto;
     }
   </style>
 
@@ -91,21 +108,20 @@
 
 <body>
 
-  <!-- LAYOUT: HEADER -->
-
-  <!-- SECTION: Title -->
-
-  <!-- SECTION: Main menu -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-sm">
-    <!-- Removing navbar-expand-sm shows this as a collapsed menu -->
     <a class="navbar-brand" href="#"><strong>UCAmisetas</strong></a>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+      <!-- IZQUIERDA -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="#">Categorías</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Lo último</a></li>
         <input type="text" class="form-inline" placeholder="Buscar">
         <button type="submit" class="btn btn-primary">Buscar</button>
       </ul>
+
+      <!-- DERECHA -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link" href="#">Autenticación</a></li>
         <li class="nav-item"><a class="nav-link" href="#"><div class="icon"></a></li>
@@ -113,20 +129,20 @@
     </div>
   </nav>
 
-  <!-- LAYOUT: CENTER -->
+  <!-- CENTRO -->
   <div class="container-fluid" style="margin-top:30px">
     <div class="row">
 
-      <!-- BLOCK: CENTER -->
+      <!-- OFERTAS -->
       <div class="col-sm-10">
-        <!-- col-sm-7 means seven out of twelve columns -->
-        <!-- SECTION: Entries -->
-        <div class="card-body text-center">
-          <h2>Ofertas del día</h2>
-          <h5>¡Corre, que vuelan!</h5>
+        <div class="card-body">
+          <div class="text-center">
+            <h2>Ofertas del día</h2>
+          </div>
+          <div class="text-center" style="color: green;">
+            <h5>¡Corre, que vuelan!</h5>
+          </div>
         </div>
-
-        <!-- OFERTAS -->
 
         <div class="row">
           <div class="card-body col-sm-3 text-center">
@@ -159,12 +175,16 @@
           </div>
         </div>
       
-        <!-- CATÁLOGO -->
         <br>
 
-        <div class="card-body text-center">
-          <h2>Catálogo</h2>
-          <h5>Nuestras camisetas</h5>
+        <!-- CATÁLOGO -->
+        <div class="card-body">
+          <div class="text-center">
+            <h2>Catálogo</h2>
+          </div>
+          <div class="text-center" style="color: green;">
+            <h5>Nuestras camisetas</h5>
+          </div>
         </div>
 
         <div class="row">
@@ -217,8 +237,7 @@
         </div>
       </div>
 
-      <!-- BLOCK: RIGHT -->
-
+      <!-- LO MÁS VENDIDO -->
       <div class="card-body col-sm-2 text-center ventas">
         <h2>Lo más vendido</h2>
         <div class="card-body text-center">
@@ -250,6 +269,7 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer class="page-footer font-small blue pt-4">
     <div class="container-fluid text-center text-md-left">
       <div class="row">
@@ -293,7 +313,7 @@
     </div>
   </footer>
 
-  <!-- Loading Javascripts -->
+  <!-- JAVASCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script>
     window.jQuery || document.write('https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"')>
