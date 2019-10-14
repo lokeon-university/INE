@@ -65,6 +65,8 @@
 
     img.camiseta {
       box-shadow: 4px 4px 5px grey;
+      height: auto;
+      width: 100%;
     }
 
     img.camven {
