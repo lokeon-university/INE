@@ -1,10 +1,17 @@
 @extends('masters.master-welcome')
 
 @section('ofertas')
-  <div class="row">
-    <div class="card-body col-sm-3 text-center">
-      <a href="#"><img class="camiseta" src="img/cam1.jpg"></a>
-      <br>
+
+@foreach($aProduct_new as $Product_offering)
+@php
+  echo $Product_offering;
+@endphp
+@endforeach
+
+<div class="row">
+  <div class="card-body col-sm-3 text-center">
+    <a href="#"><img class="camiseta" src="img/cam1.jpg"></a>
+    <br>
       <p><strong>Camiseta Neo Tokyo</strong></p>
       <div style="text-decoration: line-through;">19'00 €</div>
       <strong>13'99 €  - 26% Dcto.!</strong>
@@ -31,8 +38,11 @@
       <strong>9'99 € - 29% Dcto.!</strong>
     </div>
   </div>
-      
+  
   <br>
+  
+  
+
 @endsection
 
 @section('catalogo')
