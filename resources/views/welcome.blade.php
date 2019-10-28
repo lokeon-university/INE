@@ -30,11 +30,20 @@
     <div class="row">
     @endif
 
+    @if($Product_new->HasDiscount())
     <div class="card-body col-sm-3 text-center">
       <a href="#"><img class="camiseta" src="{{$Product_new->imgurl}}"></a>
       <p><strong>{{$Product_new->name}}</strong></p>
       <strong>{{$Product_new->price}} €</strong>
     </div>
+    @else
+    <div class="card-body col-sm-3 text-center">
+      <a href="#"><img class="camiseta" src="{{$Product_new->imgurl}}"></a>
+      <p><strong>{{$Product_new->name}}</strong></p>
+      <div style="text-decoration: line-through;">{{$Product_offering->price}} €</div>
+      <strong>{{$Product_new->price - ($Product_new->price * ($Product_new->discountPercent / 100))}}€  - {{$Product_new->discountPercent}}% Dcto</strong>
+    </div>
+    @endif
 
     @if(($iCont % 4) == 3)
     </div>
