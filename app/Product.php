@@ -21,4 +21,13 @@ class Product extends Model
         $sNow = date('Y-m-d H:i:s');
         return Product::where('discountStart_at', '<=' , date('Y-m-d', strtotime($sNow)))->where('discountEnd_at', '>=', date('Y-m-d',strtotime($sNow)))->get();
     }
+
+    public function HasDiscount()
+    {
+        $sNow = date('Y-m-d H:i:s');
+        if(isset($this->discountPercent) && ($this->discountStart_at <= $sNow) && ($this->discountEnd_at >= $sNow))
+            return true;
+        else 
+            return false;
+    }
 }

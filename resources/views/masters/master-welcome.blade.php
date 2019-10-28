@@ -102,6 +102,14 @@
       height: 100%;
       width: auto;
     }
+
+    /* HUECO STYLE */
+
+    img.hueco {
+      height: 342;
+      width: 285;
+    }
+
   </style>
 
   <title>UCAmisetas</title>
@@ -123,6 +131,7 @@
             <h5>¡Corre, que vuelan!</h5>
           </div>
         </div>
+
         @yield('ofertas')
 
         <!-- CATÁLOGO -->
@@ -134,6 +143,7 @@
             <h5>Nuestras camisetas</h5>
           </div>
         </div>
+        
         @yield('catalogo')
 
         <div class="text-center" style="margin-bottom: 10px">
