@@ -134,6 +134,12 @@
 
         @yield('ofertas')
 
+        <div class="text-center" style="margin-bottom: 10px">
+          <button type="submit" class="btn btn-primary">Ver más ofertas</button>
+        </div>
+
+        <br>
+        
         <!-- CATÁLOGO -->
         <div class="card-body">
           <div class="text-center">

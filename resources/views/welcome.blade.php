@@ -4,15 +4,21 @@
 
 <div class="row">
 
+  @php($iConta = 0)
+
   @foreach($aProduct_offering as $Product_offering)
 
+  @if($iConta < 4)
   <div class="card-body col-sm-3 text-center">
     <a href="#"><img class="camiseta" src="{{$Product_offering->imgurl}}"></a>
     <br>
     <p><strong>{{$Product_offering->name}}</strong></p>
-    <div style="text-decoration: line-through;">{{$Product_offering->price}} €</div>
-    <strong>{{number_format($Product_offering->price - ($Product_offering->price * ($Product_offering->discountPercent / 100)),2,'.','')}}€ - {{$Product_offering->discountPercent}}% Dcto</strong>
+    <div style="text-decoration: line-through;">{{number_format($Product_offering->price, 2)}} €</div>
+    <strong>{{number_format($Product_offering->price - ($Product_offering->price * ($Product_offering->discountPercent / 100)), 2)}}€ - {{$Product_offering->discountPercent}}% Dcto</strong>
   </div>
+  @endif
+
+  @php($iConta++)
 
   @endforeach
 
@@ -34,14 +40,14 @@
   <div class="card-body col-sm-3 text-center">
     <a href="#"><img class="camiseta" src="{{$Product_new->imgurl}}"></a>
     <p><strong>{{$Product_new->name}}</strong></p>
-    <strong>{{$Product_new->price}} €</strong>
+    <strong>{{number_format($Product_new->price, 2)}} €</strong>
   </div>
   @else
   <div class="card-body col-sm-3 text-center">
     <a href="#"><img class="camiseta" src="{{$Product_new->imgurl}}"></a>
     <p><strong>{{$Product_new->name}}</strong></p>
-    <div style="text-decoration: line-through;">{{$Product_offering->price}} €</div>
-    <strong>{{number_format($Product_new->price - ($Product_new->price * ($Product_new->discountPercent / 100)),2,'.','')}}€ - {{$Product_new->discountPercent}}% Dcto</strong>
+    <div style="text-decoration: line-through;">{{number_format($Product_new->price, 2)}} €</div>
+    <strong>{{number_format($Product_new->price - ($Product_new->price * ($Product_new->discountPercent / 100)),2)}}€ - {{$Product_new->discountPercent}}% Dcto</strong>
   </div>
   @endif
 
@@ -61,7 +67,6 @@
 @php ($iCont++ )
 @endwhile
 
-</div>
 @endsection
 
 @section('sidebar')
