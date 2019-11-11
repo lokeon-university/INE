@@ -30,4 +30,9 @@ class Product extends Model
         else 
             return false;
     }
+
+    public function Company()
+    {
+        return $this->belongsTo('App\Company');
+    }
 }
