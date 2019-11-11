@@ -15,4 +15,9 @@ class ProductController extends Controller
 
         return view('welcome', compact('aProduct_offering', 'aProduct_new'));
     }
+
+    function detail(Product $product)
+    {
+        return view('product.detail', compact('product'));
+    }
 }

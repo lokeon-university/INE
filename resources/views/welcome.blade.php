@@ -10,7 +10,7 @@
 
   @if($iConta < 4)
   <div class="card-body col-sm-3 text-center">
-    <a href="#"><img class="camiseta" src="{{$Product_offering->imgurl}}"></a>
+    <a href="product/{{$Product_offering->id}}"><img class="camiseta" src="{{$Product_offering->imgurl}}"></a>
     <br>
     <p><strong>{{$Product_offering->name}}</strong></p>
     <div style="text-decoration: line-through;">{{number_format($Product_offering->price, 2)}} €</div>
@@ -38,13 +38,13 @@
 
   @if($Product_new->HasDiscount())
   <div class="card-body col-sm-3 text-center">
-    <a href="#"><img class="camiseta" src="{{$Product_new->imgurl}}"></a>
+    <a href="product/{{$Product_new->id}}"><img class="camiseta" src="{{$Product_new->imgurl}}"></a>
     <p><strong>{{$Product_new->name}}</strong></p>
     <strong>{{number_format($Product_new->price, 2)}} €</strong>
   </div>
   @else
   <div class="card-body col-sm-3 text-center">
-    <a href="#"><img class="camiseta" src="{{$Product_new->imgurl}}"></a>
+    <a href="product/{{$Product_offering->id}}"><img class="camiseta" src="{{$Product_new->imgurl}}"></a>
     <p><strong>{{$Product_new->name}}</strong></p>
     <div style="text-decoration: line-through;">{{number_format($Product_new->price, 2)}} €</div>
     <strong>{{number_format($Product_new->price - ($Product_new->price * ($Product_new->discountPercent / 100)),2)}}€ - {{$Product_new->discountPercent}}% Dcto</strong>
@@ -74,24 +74,24 @@
   <a href="#"><img class="camven" src="img/cat9.jpg"></a>
   <strong>Camiseta Stranger Things</strong>
   <br>
-  <strong>17'00 €</strong>
+  <strong>17.00 €</strong>
 </div>
 <div class="card-body text-center">
   <a href="#"><img class="camven" src="img/cat5.jpg"></a>
   <strong>Camiseta Great Ramen</strong>
   <br>
-  <strong> 15'99 € </strong>
+  <strong> 15.99 € </strong>
 </div>
 <div class="card-body text-center">
   <a href="#"><img class="camven" src="img/cat8.jpg"></a>
   <strong>Camiseta Link In Park</strong>
   <br>
-  <strong> 20'00 € </strong>
+  <strong> 20.00 € </strong>
 </div>
 <div class="card-body text-center">
   <a href="#"><img class="camven" src="img/cat10.jpg"></a>
   <strong>Camiseta Slytherin</strong>
   <br>
-  <strong> 20'00 € </strong>
+  <strong> 20.00 € </strong>
 </div>
 @endsection
