@@ -2,46 +2,36 @@
 
 @section('ofertas')
 
-<div class="row">
-    <div class="card-body col-sm-4">
+<div class="row" style="margin-top: 3.8%; margin-bottom: 5%;">
+    <div class="card-body col-sm-4"></div>
+    <div class="card-body col-sm-3">
         <a href="/product/{{$product->id}}"><img class="camiseta" src="../{{$product->imgurl}}"></a>
     </div>
 
-    <div class="card-body col-sm-8">
-        <p>{{$product->id}}</p>
-        <p><strong>{{$product->name}}</strong></p>
-        <p>{{$product->price}} €</p>
-        <p>{{$product->Company()}}</p>
-        <p>{{$product->description}}</p>
+    <div class="card-body col-sm-3">
+        <p><h2>{{$product->name}}</h2></p>
+        <hr style="border-width: 2px;">
+        <p><h6><strong style="color: green;">Código del artículo:</strong> {{$product->id}}</h6></p>
+        <p><strong style="color: green; font-size: 18px;">Precio:</strong>
+        
+        @if($product->HasDiscount())
+            <strong style="font-size: 24px;">{{number_format($product->price - ($product->price * ($product->discountPercent / 100)),2)}} €</strong>
+            <span style="text-decoration: line-through; font-size: 18px">{{number_format($product->price, 2)}} €</span> - {{$product->discountPercent}}% Dcto
+        @else
+            <strong style="font-size: 24px;">{{number_format($product->price, 2)}} €</strong>
+        @endif
+        </p>
+        <p><span style="font-size: 18px;"><strong style="color: green;">Compañía:</strong> {{$product->Company()}}</span></p>
+        <p><span style="font-size: 18px;"><strong style="color: green;">Descripción:</strong>
+            <br>
+            {{$product->description}}
+        </span></p>
+        <br>
+        <div class="text-center" style="margin-bottom: 10px">
+            <button type="submit" class="btn btn-primary">Añadir al carrito</button>
         </div>
     </div>
 </div>
-
-@endsection
-
-@section('sidebar')
-<div class="card-body text-center">
-  <a href="#"><img class="camven" src="img/cat9.jpg"></a>
-  <strong>Camiseta Stranger Things</strong>
-  <br>
-  <strong>17.00 €</strong>
-</div>
-<div class="card-body text-center">
-  <a href="#"><img class="camven" src="img/cat5.jpg"></a>
-  <strong>Camiseta Great Ramen</strong>
-  <br>
-  <strong> 15.99 € </strong>
-</div>
-<div class="card-body text-center">
-  <a href="#"><img class="camven" src="img/cat8.jpg"></a>
-  <strong>Camiseta Link In Park</strong>
-  <br>
-  <strong> 20.00 € </strong>
-</div>
-<div class="card-body text-center">
-  <a href="#"><img class="camven" src="img/cat10.jpg"></a>
-  <strong>Camiseta Slytherin</strong>
-  <br>
-  <strong> 20.00 € </strong>
+ <div class="card-body col-sm-1"></div>
 </div>
 @endsection

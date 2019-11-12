@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
 
   <style>
    /* LINK STYLE */
@@ -45,7 +45,7 @@
     /* ICON STYLE */
 
     .icon {
-      background-image: url(ico/carro32.png);
+      background-image: url(/ico/carro32.png);
       background-repeat: no-repeat;
       height: 32px;
       width: 32px;
@@ -53,7 +53,7 @@
     }
 
     .icon:hover {
-      background-image: url(ico/carrol32.png);
+      background-image: url(/ico/carrol32.png);
       background-repeat: no-repeat;
       height: 32px;
       width: 32px;
@@ -123,49 +123,17 @@
       <!-- CENTER -->
       <div class="col-sm-10">
         <!-- OFERTAS -->
-        <div class="card-body">
-          <div class="text-center">
-            <h2>Ofertas del día</h2>
-          </div>
-          <div class="text-center" style="color: green;">
-            <h5>¡Corre, que vuelan!</h5>
-          </div>
-        </div>
-
         @yield('ofertas')
-
-        <div class="text-center" style="margin-bottom: 10px">
-          <button type="submit" class="btn btn-primary">Ver más ofertas</button>
-        </div>
 
         <br>
         
         <!-- CATÁLOGO -->
-        <div class="card-body">
-          <div class="text-center">
-            <h2>Catálogo</h2>
-          </div>
-          <div class="text-center" style="color: green;">
-            <h5>Nuestras camisetas</h5>
-          </div>
-        </div>
-        
         @yield('catalogo')
-
-        <div class="text-center" style="margin-bottom: 10px">
-          <button type="submit" class="btn btn-primary">Ver más camisetas</button>
-        </div>
 
       </div>
 
       <!-- SIDEBAR -->
-      <div class="card-body col-sm-2 text-center ventas">
-        <h2>Lo más vendido</h2>
-        @yield('sidebar')
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary">Ver más camisetas</button>
-        </div>
-      </div>
+      @yield('sidebar')
 
     </div>
   </div>

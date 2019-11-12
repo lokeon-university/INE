@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm">
-  <a class="navbar-brand" href="#"><strong>UCAmisetas</strong></a>
+  <a class="navbar-brand" href="/"><strong>UCAmisetas</strong></a>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
     <!-- IZQUIERDA -->
