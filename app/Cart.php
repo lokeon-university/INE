@@ -12,7 +12,7 @@ class Cart extends Model
 
     public function __construct(Cart $cart = null)
     {
-        if (!isNull($cart)) {
+        if ($this->cart != null) {
             $this->aItem = $cart->aItem;
             $this->iTotalItems = $cart->iTotalItems;
             $this->dTotalPrice = $cart->dTotalPrice;
@@ -36,10 +36,16 @@ class Cart extends Model
         if (array_key_exists($product->id, $this->aItem)) {
             $this->aItem[$product->id]['amountItem'] -= 1;
         }
+
+        $this->iTotalItems -= 1;
+        $this->dTotalPrice -= $product->price;
     }
 
     public function removeAll(Product $product)
     {
+        $this->iTotalItems -= $this->aItem[$product->id]['amountItem'];
+        $this->dTotalPrice -= $this->aItem[$product->id]['price'] * $this->aItem[$product->id]['amountItem'];
+
         if (array_key_exists($product->id, $this->aItem)) {
             unset($this->aItem[$product->id]);
         }
