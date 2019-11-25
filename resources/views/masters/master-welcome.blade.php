@@ -49,7 +49,6 @@
       background-repeat: no-repeat;
       height: 32px;
       width: 32px;
-      margin-top: -10px;
     }
 
     .icon:hover {
@@ -57,7 +56,6 @@
       background-repeat: no-repeat;
       height: 32px;
       width: 32px;
-      margin-top: -10px;
     }
 
     /* IMAGE STYLE */
@@ -66,6 +64,14 @@
       box-shadow: 4px 4px 5px grey;
       height: auto;
       width: 100%;
+    }
+
+    img.camiseta-view {
+      box-shadow: 4px 4px 5px grey;
+      height: auto;
+      width: 100px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
 
     img.camven {
@@ -116,6 +122,26 @@
       margin: auto;
     }
 
+    .table {
+      width: 70%;
+      margin: auto;
+      background-color: #e0e0e0;
+      box-shadow: 4px 4px 5px grey;
+    }
+    
+    .article {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      background-color: #f0f0f0;
+    }
+
+    .atribute {
+      color: darkgreen;
+    }
+
+    .data {
+      margin: auto;
+    }
   </style>
 
   <title>UCAmisetas</title>
