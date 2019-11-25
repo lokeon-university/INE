@@ -21,12 +21,12 @@ class ProductController extends Controller
         return view('product.detail', compact('product'));
     }
 
-    function addToCart(Product $product,Request $request)
+    function addToCart(Product $product, Request $request)
     {
-        $cart = new Cart($request->session()->get('cart',null));
+        $cart = $request->session()->get('cart', null);
         $cart->add($product);
-        $request->session()->put('cart',$cart);
+        $request->session()->put('cart', $cart);
 
-        return redirect()->route('product', ['product'=>$product->id]);
+        return redirect()->route('product', ['product' => $product->id, 'success' => "El producto ha sido añadido al carro."]);
     }
 }
