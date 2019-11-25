@@ -110,6 +110,12 @@
       width: 285;
     }
 
+    .number {
+      font-weight: bold;
+      color: darkgreen;
+      margin: auto;
+    }
+
   </style>
 
   <title>UCAmisetas</title>
