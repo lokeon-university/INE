@@ -23,11 +23,7 @@ class ProductController extends Controller
 
     function addToCart(Product $product, Request $request)
     {
-        if ($request->session()->exists('cart')) {
-            $cart = $request->session()->get('cart', null);
-        } else {
-            $cart = new Cart($request->session()->get('cart', null));
-        }
+        $cart = new Cart($request->session()->get('cart', null));
         $cart->add($product);
         $request->session()->put('cart', $cart);
 

@@ -12,7 +12,7 @@ class Cart extends Model
 
     public function __construct(Cart $cart = null)
     {
-        if ($this->cart != null) {
+        if ($cart != null) {
             $this->aItem = $cart->aItem;
             $this->iTotalItems = $cart->iTotalItems;
             $this->dTotalPrice = $cart->dTotalPrice;
