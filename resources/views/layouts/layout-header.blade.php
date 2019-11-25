@@ -14,7 +14,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a class="nav-link" href="#">Autenticación</a></li>
       <li class="nav-item"><a class="nav-link" href="#"><div class="icon"></a></li>
-      @if(session()->get('cart', null) != null)
+      @if(session()->get('cart',null) != null || session()->get('cart')['iTotalItems'] > 0)
       <li class="nav-item number">{{session()->get('cart', null)->iTotalItems}}</li>
       @endif
    </ul>
