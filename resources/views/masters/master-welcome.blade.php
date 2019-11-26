@@ -136,6 +136,7 @@
     }
 
     .atribute {
+      margin: auto;
       color: darkgreen;
     }
 

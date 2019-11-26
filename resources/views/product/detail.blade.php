@@ -2,6 +2,12 @@
 
 @section('ofertas')
 
+@if (session('success'))
+    <div class="alert alert-success text-center">
+        {{ session('success') }}
+    </div>
+@endif
+
 <div class="row" style="margin-top: 3.8%; margin-bottom: 5%;">
     <div class="card-body col-sm-4"></div>
     <div class="card-body col-sm-3">

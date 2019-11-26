@@ -27,6 +27,6 @@ class ProductController extends Controller
         $cart->add($product);
         $request->session()->put('cart', $cart);
 
-        return redirect()->route('product', ['product' => $product->id, 'success' => "El producto ha sido añadido al carro."]);
+        return redirect()->route('product', ['product' => $product->id])->with('success', 'El producto ha sido añadido al carro.');
     }
 }

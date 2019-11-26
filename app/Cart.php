@@ -21,14 +21,20 @@ class Cart extends Model
 
     public function add(Product $product)
     {
+        if($product->HasDiscount()) {
+            $price = $product->price - ($product->price * ($product->discountPercent / 100));
+        } else {
+            $price = $product->price;
+        }
+
         if (array_key_exists($product->id, $this->aItem)) {
             $this->aItem[$product->id]['amountItem'] += 1;
         } else {
-            $this->aItem[$product->id] = array('id' => $product->id, 'name' => $product->name, 'imgurl' => $product->imgurl, 'price' => $product->price, 'amountItem' => 1);
+            $this->aItem[$product->id] = array('id' => $product->id, 'name' => $product->name, 'imgurl' => $product->imgurl, 'price' => $price, 'amountItem' => 1);
         }
 
         $this->iTotalItems += 1;
-        $this->dTotalPrice += $product->price;
+        $this->dTotalPrice += $price;
     }
 
     public function remove(Product $product)
@@ -38,7 +44,7 @@ class Cart extends Model
         }
 
         $this->iTotalItems -= 1;
-        $this->dTotalPrice -= $product->price;
+        $this->dTotalPrice -= $this->aItem[$product->id]['price'];
     }
 
     public function removeAll(Product $product)
