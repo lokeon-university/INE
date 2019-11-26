@@ -20,7 +20,7 @@ class CartController extends Controller
         return view('cart.detail');
     }
 
-    public function remove(Product $product) 
+    public function remove(Product $product)
     {
         session()->get('cart', null)->remove($product);
 
@@ -30,7 +30,27 @@ class CartController extends Controller
     public function removeAll(Product $product)
     {
         session()->get('cart', null)->removeAll($product);
-        
+
+        return view('cart.detail');
+    }
+
+    public function operation(String $sOperation, Product $product, Request $request)
+    {
+        if (array_key_exists($product->id, $request->session()->get('cart', null)->aItem)) {
+            switch ($sOperation) {
+                case 'add':
+                    $request->session()->get('cart', null)->add($product);
+                    break;
+
+                case 'remove':
+                    $request->session()->get('cart', null)->remove($product);
+                    break;
+
+                case 'removeAll':
+                    $request->session()->get('cart', null)->removeAll($product);
+                    break;
+            }
+        }
         return view('cart.detail');
     }
 }
