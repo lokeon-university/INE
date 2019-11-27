@@ -21,7 +21,7 @@ class Cart extends Model
 
     public function add(Product $product)
     {
-        if($product->HasDiscount()) {
+        if ($product->HasDiscount()) {
             $price = $product->price - ($product->price * ($product->discountPercent / 100));
         } else {
             $price = $product->price;
@@ -39,12 +39,17 @@ class Cart extends Model
 
     public function remove(Product $product)
     {
+
         if (array_key_exists($product->id, $this->aItem)) {
             $this->aItem[$product->id]['amountItem'] -= 1;
         }
 
         $this->iTotalItems -= 1;
         $this->dTotalPrice -= $this->aItem[$product->id]['price'];
+
+        if ($this->aItem[$product->id]['amountItem'] == 0) {
+            unset($this->aItem[$product->id]);
+        }
     }
 
     public function removeAll(Product $product)
