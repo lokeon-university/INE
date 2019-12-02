@@ -2,6 +2,12 @@
 
 @section('content')
 
+@php 
+    $cart = session()->get('cart', null); 
+@endphp
+
+@if($cart != null)
+
 <div class="card-body table">
     <div class="row">
         <div class="col-sm-2 text-center atribute">
@@ -20,10 +26,6 @@
             <strong>Cantidad</strong>
         </div>
     </div>
-
-    @php 
-    $cart = session()->get('cart', null); 
-    @endphp
 
     @foreach($cart->aItem as $aItem)
     <div class="row article">
@@ -63,8 +65,23 @@
     </div>
 
     <div class="text-center">
-        <a href="#" type="submit" class="btn btn-success">Realizar pedido</a>
+        <a href="{{ route('cart.purchasing') }}" type="submit" class="btn btn-success">Realizar pedido</a>
     </div>
 </div>
+
+<br>
+@else
+
+<br>
+
+<div class="card-body">
+    <div class="text-center">
+        <h1>No existen artículos en el carro todavía</h1>
+    </div>
+</div>
+
+<br>
+
+@endif
 
 @endsection

@@ -7,6 +7,11 @@ use App\Product;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index']);
+    }
+    
     public function show(Request $request)
     {
         $cart = $request->session()->get('cart', null);
@@ -52,5 +57,12 @@ class CartController extends Controller
             }
         }
         return view('cart.detail');
+    }
+
+    public function purchasing()
+    {
+        $cart = session()->get('cart', null);
+
+        return view('cart.purchasing');
     }
 }
