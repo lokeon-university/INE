@@ -149,19 +149,14 @@
 </head>
 
 <body>
-  @include('layouts.layout-header')
+  @include('layouts.header')
 
   <div class="container-fluid" style="margin-top:30px">
     <div class="row">
       <!-- CENTER -->
       <div class="col-sm-10">
         <!-- OFERTAS -->
-        @yield('ofertas')
-
-        <br>
-        
-        <!-- CATÁLOGO -->
-        @yield('catalogo')
+        @yield('content')
 
       </div>
 
@@ -171,7 +166,7 @@
     </div>
   </div>
 
-  @include('layouts.layout-footer')
+  @include('layouts.footer')
 
   <!-- JAVASCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

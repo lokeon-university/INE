@@ -1,6 +1,6 @@
-@extends('masters.master-welcome')
+@extends('layouts.master')
 
-@section('ofertas')
+@section('content')
 
 @if (session('success'))
     <div class="alert alert-success text-center">
@@ -44,4 +44,5 @@
 </div>
 <div class="card-body col-sm-1"></div>
 </div>
+
 @endsection

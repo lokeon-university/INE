@@ -1,6 +1,6 @@
-@extends('masters.master-welcome')
+@extends('layouts.master')
 
-@section('ofertas')
+@section('content')
 <div class="card-body">
   <div class="text-center">
     <h2>Ofertas del día</h2>
@@ -35,10 +35,7 @@
   <button type="submit" class="btn btn-primary">Ver más ofertas</button>
 </div>
 
-@endsection
-
-
-@section('catalogo')
+<br>
 
 <div class="card-body">
   <div class="text-center">

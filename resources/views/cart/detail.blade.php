@@ -1,6 +1,6 @@
-@extends('masters.master-welcome')
+@extends('layouts.master')
 
-@section('ofertas')
+@section('content')
 
 <div class="card-body table">
     <div class="row">
@@ -21,7 +21,9 @@
         </div>
     </div>
 
-    @php($cart = session()->get('cart', null))
+    @php 
+    $cart = session()->get('cart', null); 
+    @endphp
 
     @foreach($cart->aItem as $aItem)
     <div class="row article">
